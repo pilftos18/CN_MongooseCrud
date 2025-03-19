@@ -1,0 +1,403 @@
+{
+	"info": {
+		"_postman_id": "4a6ebe00-8a51-45ce-a97b-d863e9e4571c",
+		"name": "CNAssignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23084284",
+		"_collection_link": "https://warped-firefly-647575.postman.co/workspace/Team-Workspace~80161f9a-29f5-48e2-872d-8ff2ed9ffd98/collection/23084284-4a6ebe00-8a51-45ce-a97b-d863e9e4571c?action=share&source=collection_link&creator=23084284"
+	},
+	"item": [
+		{
+			"name": "addProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/cart/?productId=3&quantity=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cart",
+						""
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "3"
+						},
+						{
+							"key": "quantity",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserLogin",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"email\": \"krvivi28@gmail.com\",\r\n    \"password\": \"vivek28@\" \r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/user/login"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCartItem",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/cart/?productId=3&quantity=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cart",
+						""
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "3"
+						},
+						{
+							"key": "quantity",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rating",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoic2VsbGVyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQwMzk5MjY3LCJleHAiOjE3NDA0MDI4Njd9.5HVdeh0ShdOd18MJk-zV9bxAELPrPTHGu1lwyF_jFKc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3200/api/products/rate?userID=2&productId=1&rating=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"products",
+						"rate"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "2"
+						},
+						{
+							"key": "productId",
+							"value": "1"
+						},
+						{
+							"key": "rating",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "miniProject-get",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3534/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "miniProject-Signup",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"name\": \"tara Doe\",\r\n        \"email\": \"tara@gmail.com\",\r\n        \"password\": \"asd\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3534/api/users/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "miniProject-Signin",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"john.doe@example.com\",\r\n    \"password\": \"password123\"\r\n}   ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3534/api/users/signin"
+			},
+			"response": []
+		},
+		{
+			"name": "miniProject-getPost",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjMsImVtYWlsIjoidGFyYUBnbWFpbC5jb20iLCJpYXQiOjE3NDA5OTM4NDAsImV4cCI6MTc0MDk5NzQ0MH0.YpqiFweGaIxpIuWT3kWBcXVpyJlAOLELPtBmySG5EDE",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": "http://localhost:3534/api/posts/"
+			},
+			"response": []
+		},
+		{
+			"name": "miniProject-addPost",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "caption",
+							"value": "new data",
+							"type": "text"
+						},
+						{
+							"key": "imageUrl",
+							"type": "file",
+							"src": "/C:/Users/admin/Downloads/1000079036.jpg"
+						}
+					]
+				},
+				"url": "http://localhost:3534/api/posts/"
+			},
+			"response": []
+		},
+		{
+			"name": "miniProject-deletePost",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3534/api/posts/5"
+			},
+			"response": []
+		},
+		{
+			"name": "miniProject-Update",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "caption",
+							"value": "Update data",
+							"type": "text"
+						},
+						{
+							"key": "imageUrl",
+							"type": "file",
+							"src": "/C:/Users/admin/Downloads/2025_01_07_12_17_48modifiedimage.jpg"
+						}
+					]
+				},
+				"url": "http://localhost:3534/api/posts/7"
+			},
+			"response": []
+		},
+		{
+			"name": "miniProject-addComment",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3534/api/comments/"
+			},
+			"response": []
+		},
+		{
+			"name": "miniProject-getcommentByPost",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\" :\"hehehhe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3534/api/comments/3"
+			},
+			"response": []
+		},
+		{
+			"name": "miniProject-updateComment",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\" :\"alka\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3534/api/comments/5"
+			},
+			"response": []
+		},
+		{
+			"name": "miniProject-deleteComment",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3534/api/comments/6"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/expenses",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"title\": \"Lunch at Joe's\",\r\n    \"amount\": 1388,\r\n    \"date\": \"2023-09-22\", \r\n    \"isRecurring\": true, \r\n    \"tags\": [\"hello\", \"tara\"] \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/expenses"
+			},
+			"response": []
+		},
+		{
+			"name": "aggrerationBytitle",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/expenses/aggregate/total-revenue"
+			},
+			"response": []
+		},
+		{
+			"name": "/avg-by-recurring",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/expenses/group/avg-by-recurring"
+			},
+			"response": []
+		},
+		{
+			"name": "by-tags",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/expenses/group/by-tags"
+			},
+			"response": []
+		}
+	]
+}

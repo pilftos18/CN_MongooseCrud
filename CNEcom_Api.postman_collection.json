@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "e28d0949-422c-47a7-aeba-e50a9a82f5c5",
+		"name": "CNEcom_Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23084284",
+		"_collection_link": "https://warped-firefly-647575.postman.co/workspace/Team-Workspace~80161f9a-29f5-48e2-872d-8ff2ed9ffd98/collection/23084284-e28d0949-422c-47a7-aeba-e50a9a82f5c5?action=share&source=collection_link&creator=23084284"
+	},
+	"item": [
+		{
+			"name": "addProduct",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoic2VsbGVyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQwMzk5MjY3LCJleHAiOjE3NDA0MDI4Njd9.5HVdeh0ShdOd18MJk-zV9bxAELPrPTHGu1lwyF_jFKc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "helloo",
+							"type": "text"
+						},
+						{
+							"key": "desc",
+							"value": "dsdsasad",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "67.90",
+							"type": "text"
+						},
+						{
+							"key": "sizes",
+							"value": "M,S,L,XL",
+							"type": "text"
+						},
+						{
+							"key": "imageUrl",
+							"type": "file",
+							"src": "/C:/Users/admin/Downloads/brandcare-medical-advertising-and-consultancy-pvt-ltd.png"
+						}
+					]
+				},
+				"url": "http://localhost:3200/api/products"
+			},
+			"response": []
+		},
+		{
+			"name": "getProduct",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoic2VsbGVyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQwMzk5MjY3LCJleHAiOjE3NDA0MDI4Njd9.5HVdeh0ShdOd18MJk-zV9bxAELPrPTHGu1lwyF_jFKc",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:3200/api/products/"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"seller@example.com\",\r\n    \"password\" :\"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3200/api/users/login"
+			},
+			"response": []
+		},
+		{
+			"name": "GetCartProduct",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoic2VsbGVyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQwMTMxMjY3LCJleHAiOjE3NDAxMzQ4Njd9.XGHr_IzJReL2jBsIlKYtpgs1JBfDig8tmBLXLGWZYHs",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:3200/api/cartItems"
+			},
+			"response": []
+		},
+		{
+			"name": "addProductCart",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoic2VsbGVyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQwMzk5MjY3LCJleHAiOjE3NDA0MDI4Njd9.5HVdeh0ShdOd18MJk-zV9bxAELPrPTHGu1lwyF_jFKc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3200/api/cartItems?productID=3&quantity=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"cartItems"
+					],
+					"query": [
+						{
+							"key": "productID",
+							"value": "3"
+						},
+						{
+							"key": "quantity",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteProduct",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoic2VsbGVyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQwMDUwMjE2LCJleHAiOjE3NDAwNTM4MTZ9.d-tufKmSyJGyOz5a3Cg2Iio8PTiGA8IA1IqoAAoN2Ng",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:3200/api/cartItems/3"
+			},
+			"response": []
+		}
+	]
+}
