@@ -9,23 +9,29 @@ export default class UserController {
     this.userRepository = new UserRepository();
   }
 
-  async signUp(req, res) {
-    const {
-      name,
-      email,
-      password,
-      type,
-    } = req.body;
-
-    const hashedPassword = await bcrypt.hash(password, 12)
-    const user = new UserModel(
-      name,
-      email,
-      hashedPassword,
-      type
-    );
-    await this.userRepository.signUp(user);
-    res.status(201).send(user);
+  async signUp(req, res, next) {
+    try {
+      const {
+        name,
+        email,
+        password,
+        type,
+      } = req.body;
+  
+      const hashedPassword = await bcrypt.hash(password, 12)
+      const user = new UserModel(
+        name,
+        email,
+        hashedPassword,
+        type
+      );
+      await this.userRepository.signUp(user);
+      res.status(201).send(user);
+      
+    } catch (error) {
+      next(error);
+     
+    }
   }
 
   async signIn(req, res, next) {
@@ -60,6 +66,7 @@ return res.status(200).send(token);
       }
     }
     }catch(err){
+      next(err);
       console.log(err);
       return res.status(200).send("Something went wrong");
     }
