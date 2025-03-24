@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export const productSchmea = new mongoose.Schema({
+export const productSchema = new mongoose.Schema({
     name:{
         type: String,
         required: true
@@ -15,7 +15,7 @@ export const productSchmea = new mongoose.Schema({
     },
     imageUrl: {
         type: String,
-        required: true
+        required: false
 
     },
     category:{
@@ -24,11 +24,24 @@ export const productSchmea = new mongoose.Schema({
     },
     sizes:{
         type: [String],
-        required: true,
+        required: false,
         enum: ['XS','S','M','L','XL','XXXL']
     },
     inStock:{
         type: Number,
-        required: true,
-    }
+        required: false,
+    },
+    review:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Review'
+        }
+    ],
+    categories:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref:'Category'
+
+        }
+]
 })

@@ -21,9 +21,9 @@ export default class ProductController {
   async addProduct(req, res) {
     try{
       console.log(req.body);
-    const { name, price, sizes } = req.body;
-    const newProduct = new ProductModel(name,null, parseFloat(price),
-    req.file.filename,null, sizes.split(',')
+    const { name, price, sizes, categories, desc } = req.body;
+    const newProduct = new ProductModel(name,desc, parseFloat(price),
+    req.file?.filename,categories, sizes?.split(',')
     );
     const createdProduct = await this.productRepository.add(newProduct);
     res.status(201).send(createdProduct);
@@ -36,7 +36,7 @@ export default class ProductController {
   async rateProduct(req, res, next) {    
     try{
     const userID = req.userID;
-    const productID = req.body.productID;
+    const productID = req.body.productId;
     const rating = req.body.rating;
     await this.productRepository.rate(
       userID,
