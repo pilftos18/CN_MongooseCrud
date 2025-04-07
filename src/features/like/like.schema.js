@@ -14,7 +14,6 @@ export const likeSchema =  new mongoose.Schema({
         type: String,
         enum: ['Product', 'Category']
     }
-
 }).pre('save', (next)=>{
     console.log("New Like Coming in");
     next();
@@ -25,7 +24,7 @@ export const likeSchema =  new mongoose.Schema({
     console.log("Retriving Likes");
     next();
 }).post('find', (docs)=>{
-    console.log("Find is COmpletes");
+    console.log("Find is Completes");
     console.log(docs);
     
 })
